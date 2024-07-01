@@ -1,0 +1,67 @@
+query AuthorQuery {
+    allAuthors {
+        id
+        name
+        starRating
+    }
+}
+
+query BookListWithAuthor {
+    allBooks {
+        title
+        availabilityStatus
+        genre {
+            name
+        }
+        author {
+            name
+        }
+    }
+}
+
+query allAuthors {
+    allAuthors {
+        name
+        starRating
+    }
+}
+
+
+
+
+mutation createNewAuthor($nameValue: String!,$starValue:Int!) {
+    createAuthor(name: $nameValue, starRating: $starValue){
+        createAuthor {
+            name
+            starRating
+            id
+        }
+    }
+
+
+}
+
+mutation deleteUserByID($idValue:ID) {
+    deleteAuthor(idValue: $idValue) {
+        deleteAuthor {
+            id
+        }
+    }
+}
+
+mutation updateAuthorDetails($idValue:ID,$authorRatingValue:Int!,$authorName:String!) {
+    updateAuthor(name: $authorName, starRating: $authorRatingValue, idValue: $idValue) {
+        updatedAuthor {
+            name
+            starRating
+            id
+        }
+    }
+}
+
+query AllAuthorWithNameAndIdOnly {
+    allAuthors {
+        name
+        id
+    }
+}

@@ -1,0 +1,10 @@
+mutation CreateBooks($authorId:Int!,$availabilityStatus:String!,$genreId:Int!,$title:String!) {
+    createBook(authorId: $authorId, availabilityStatus: $availabilityStatus genreId: $genreId, title:$title) {
+        createBooks {
+            title
+            author {
+                name
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+mutation CreateGenre($genereName:String!) {
+    createGenre(name: $genereName) {
+        createGenre {
+            id
+            name
+        }
+    }
+}
+
+query GenreQuery {
+    allGenre {
+        name
+        id
+    }
+}
